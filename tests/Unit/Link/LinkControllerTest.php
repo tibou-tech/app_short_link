@@ -5,6 +5,7 @@ namespace Tests\Unit\Link;
 use App\Actions\AccessLinkLogAction;
 use App\Models\Link;
 use App\Repositories\LinkRepository;
+use App\Services\GeolocationGetCountryByApiService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -19,7 +20,8 @@ class LinkControllerTest extends TestCase
     {
         parent::setUp();
 
-        $this->accessLog = new AccessLinkLogAction();
+        // Can instantiate AccessLinkLogAction in AppServiceProvider
+        $this->accessLog = new AccessLinkLogAction(new GeolocationGetCountryByApiService());
 
         $this->processLink = new LinkRepository();
     }
