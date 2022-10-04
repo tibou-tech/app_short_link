@@ -29,3 +29,5 @@ connection (for redirection)
 
 
 [Abstract api GeoLocation documentation](https://www.abstractapi.com/api/ip-geolocation-api)
+
+`Api Key` for test: `78ec429731fd4c869d4ffbc59ba5ec8e`
