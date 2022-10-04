@@ -21,21 +21,21 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="relative flex justify-center min-h-screen py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline"> {{ __('general.dashboard') }}</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline dark:text-gray-500"> {{ __('general.dashboard') }}</a>
                     @else
                         <a href="{{ route('links.index' , ['locale' => app()->getLocale()]) }}"
-                            class="text-sm text-gray-700 dark:text-gray-500 underline list-links">
+                            class="text-sm text-gray-700 underline dark:text-gray-500 list-links">
                             {{ __('general.list_links') }}
                         </a>
 
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline"> {{ __('general.login') }} </a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline dark:text-gray-500"> {{ __('general.login') }} </a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"> {{ __('general.register') }}</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline dark:text-gray-500"> {{ __('general.register') }}</a>
                         @endif
                     @endauth
                 </div>
@@ -44,14 +44,14 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="logo-short">
                     <img
-                        src="{{ url('storage/shortlink.png') }}"
+                        src="{{ url('logo.png') }}"
                         alt="short link"
                         title="short link"
                     />
                 </div>
 
                 <div class="flex justify-center sm:items-center">
-                    <div class="text-center text-9xl  text-gray-500">
+                    <div class="text-center text-gray-500 text-9xl">
                         App Shorted Link
                     </div>
                 </div>
